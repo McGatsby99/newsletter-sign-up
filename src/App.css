@@ -1,38 +1,309 @@
-.App {
-  text-align: center;
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Tomato: hsl(4, 100%, 67%)
+
+### Neutral
+
+- Dark Slate Grey: hsl(234, 29%, 20%)
+- Charcoal Grey: hsl(235, 18%, 26%)
+- Grey: hsl(231, 7%, 60%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Roboto](https://fonts.google.com/specimen/Roboto)
+- Weights: 400, 700 */
+
+
+:root{
+
+  /* Primary colors */
+  --tomato: hsl(4, 100%, 67%);
+
+  /* Neutral colors */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+
+  /* borders */
+  --border-red: 1px solid red;
+  --border-green: 1px solid green;
+  --border-blue: 1px solid blue;
+  --border-yellow: 1px solid yellow;
+
+  font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background-color: var(--dark-slate-grey);
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  height: 95vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  /* height: 60%; */
+  height: 500px;
+  width: 750px;
+  /* max-width: 800px;
+  min-width: 600px; */
+  /* border: var(--border-red); */
+  background-color: var(--white);
+  border-radius: 30px;
+  padding: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content{
+  /* border: var(--border-green); */
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: var(--charcoal-grey);
 }
+
+.subscribe-container{
+  width: 45%;
+  height: 100%;
+  /* border: var(--border-yellow); */
+  margin-left: 20px;
+}
+
+.info{
+  /* border: var(--border-yellow); */
+  margin-right: 0px;
+}
+
+.info h1{
+  /* border: var(--border-blue); */
+  /* text-align: center; */
+  margin-top: 40px;
+  font-size: 40px;
+}
+
+.info > p{
+  margin-top: 20px;
+}
+
+.list-container{
+  /* border: var(--border-red); */
+  margin-top: 20px;
+}
+
+.list{
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.list img {
+  display: inline-block;
+  /* border: var(--border-green); */
+  height: 20px;
+}
+
+.list p{
+  display: inline-block;
+  /* border: var(--border-green); */
+
+}
+
+.form{
+  /* border: var(--border-blue); */
+  margin-top: 30px;
+}
+
+.form p{
+  margin-bottom: 10px;
+}
+
+.form input{
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+
+input:valid {
+  border: 2px solid green;
+}
+
+.form button{
+  height: 40px;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  display: block;
+  width: 332px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form .warning{
+  color: red;
+}
+
+
+
+.illustrations-container{
+  width: 45%;
+  height: 100%;
+  /* border: var(--border-blue); */
+  
+}
+
+.illustrations-container .image{
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/images/illustration-sign-up-desktop.svg');
+  /* background-origin: border-box; */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  
+}
+
+.success-container{
+  padding: 50px;
+  border-radius: 20px;
+  background-color: var(--white);
+  /* border: var(--border-red); */
+}
+
+.success{
+  width: 280px;
+  height: 280px;
+  /* border: var(--border-blue); */
+}
+
+.success h1{
+  margin-top: 20px;
+}
+
+.success p{
+  margin-top: 10px;
+}
+
+.success button{
+  margin-top: 20px;
+  color: var(--white);
+  background-color: var(--dark-slate-grey);
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .App{
+    height: auto;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  
+  .container{
+    /* height: 60%; */
+    height: 722px;
+    width: 348px;
+    /* max-width: 800px;
+    min-width: 600px; */
+    /* border: var(--border-red); */
+    border-radius: 0px;
+    padding: 0px;
+    background-color: var(--white);
+  }
+
+  .content{
+    /* border: var(--border-green); */
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    color: var(--charcoal-grey);
+  }
+
+  .subscribe-container{
+    width: 90%;
+    height: auto;
+    /* border: var(--border-yellow); */
+    margin-left: 20px;
+  }
+
+  .form input{
+    display: block;
+    width: 250px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+  
+  .form button{
+    height: 40px;
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    display: block;
+    width: 282px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+
+  .illustrations-container{
+    width: 100%;
+    height: 350px;
+    /* border: var(--border-blue); */
+    
+  }
+
+  .illustrations-container .image{
+    width: 100%;
+    height: 100%;
+    background-image: url('./assets/images/illustration-sign-up-mobile.svg');
+    /* background-origin: border-box; */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* border: var(--border-green); */
+    
+  }
+  
+  
+}
+
+
+

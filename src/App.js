@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+
+// app styles
+import { useState } from 'react';
 import './App.css';
 
+// components
+import Illustrations from './components/Illustrations';
+import Subscribe from './components/Subscribe';
+import Success from './components/Success';
+
 function App() {
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const [email, setEmail] = useState('');
+
+  const handleChangeEmail = (event) =>{
+    setEmail(event.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        submitted
+        ? <Success setSubmitted={setSubmitted} setEmail={setEmail} email={email}/>
+        :(<div className="container">
+          <div className="content">
+            <Subscribe setSubmitted={setSubmitted} handleChangeEmail={handleChangeEmail} email={email}/>
+            <Illustrations />
+          </div>
+        </div>)
+      }  
     </div>
   );
 }
